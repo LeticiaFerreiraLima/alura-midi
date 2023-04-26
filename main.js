@@ -1,7 +1,15 @@
-function tocaSom (idElementoAudio) {
-    document.querySelector(idElementoAudio).play(); 
+function tocaSom (seletorAudio) {
+    const elemento = document.querySelector(seletorAudio);
+    
+    if (elemento != null && elemento.localName === 'audio') {
+        elemento.play();
+    } else {
+            alert('Elemento não encontrado');
+        }
     
 }
+
+
 
 const listaDeTeclas = document.querySelectorAll('.tecla'); 
 
@@ -35,11 +43,11 @@ for (let contador = 0; contador < listaDeTeclas.length; contador++) {
 2. A funcionalidade play() permite reprodução do áudio.
 3. querySelectorAll seleciona todos os elementos com determinado seletor e cria um array.
 4. Função tocaSom precisa de um parâmetro, para que possa ser atribuído o som de cada botão. 
-5. Criação de lista de teclas permite manipulação dos botões
-6. função anônima, não recebe um nome. Permite passar parâmetro para tocaSom
-7. atributo classList permite acessar determinada classe numa lista de classes.
-8. uso de uma template string para atribuir um texto dinâmico.
+5. Criação de lista de teclas permite manipulação dos botões.
+6. Função anônima não recebe um nome. Permite passar parâmetro para tocaSom.
+7. Atributo classList permite acessar determinada classe numa lista de classes.
+8. Uso de uma template string para atribuir um texto dinâmico.
 9. onkeydown/onkeyup - indica se a tecla foi pressionada ou solta. 
 10. É preciso especificar qual a tecla pressionada (uso de estrutura condicional).
-11. funcionalidade add permite adicionar classe na lista
+11. Funcionalidade add permite adicionar classe na lista.
 */
